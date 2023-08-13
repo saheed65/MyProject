@@ -34,8 +34,8 @@ export default function Home() {
   console.log(filterRating);
   console.log(current);
 
+  console.log("data", data);
   if (error) return <p className="mt-5 py-5">{error.message}</p>;
-
   return (
     <>
       {loading ? (

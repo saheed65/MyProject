@@ -40,7 +40,7 @@ export default function TvDetail() {
     <div>
       {error && <p className="mt-5 text-center">{error.message}</p>}
       {loading ? (
-        <loaders />
+        <Loaders />
       ) : (
         <Container fluid className="=p-0">
           <div className="d-flex align-items-center justify-content-between py-3 px-2 bgColorB">

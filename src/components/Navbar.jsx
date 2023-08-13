@@ -7,14 +7,15 @@ import { AiOutlineClose } from "react-icons/ai";
 export default function Navbar() {
   const [showSearch, setShowSearch] = useState();
   const [searchQuery, setSearchQuery] = useState("");
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   console.log(searchQuery);
 
-  const handleSubmit = ()=> {
-    if(searchQuery !== '') {
-      navigate(`search/?q=${searchQuery}`)
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (searchQuery !== "") {
+      navigate(`search/?q=${searchQuery}`);
     }
-  }
+  };
   return (
     <Container
       fluid
@@ -40,7 +41,7 @@ export default function Navbar() {
         </>
       )}
       {showSearch && (
-        <form className="position-relative ms-auto">
+        <form className="position-relative ms-auto" onSubmit={handleSubmit}>
           <input
             type="text"
             placeholder="Search tv..."
